@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20200721 13:18:45.475" rpa="false">
+<suite id="s1" name="Login" source="C:\roboweek\ninjachef\mobile\tests\login.robot">
+<test id="s1-t1" name="Acessar o cardapio">
+<kw name="Open Session" library="base" type="setup">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Emulator</arg>
+<arg>app=${EXECDIR}/app/ninjachef.apk</arg>
+<arg>udid=emulator-5554</arg>
+<arg>adbExecTimeout=120000</arg>
+</arguments>
+<status status="PASS" starttime="20200721 13:18:45.737" endtime="20200721 13:19:10.767"></status>
+</kw>
+<status status="PASS" starttime="20200721 13:18:45.737" endtime="20200721 13:19:10.767"></status>
+</kw>
+<kw name="Dado que desejo comer &quot;Massas&quot;">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${prato}</arg>
+</arguments>
+<msg timestamp="20200721 13:19:10.769" level="INFO">${prato} = Massas</msg>
+<status status="PASS" starttime="20200721 13:19:10.768" endtime="20200721 13:19:10.769"></status>
+</kw>
+<status status="PASS" starttime="20200721 13:19:10.768" endtime="20200721 13:19:10.769"></status>
+</kw>
+<kw name="Quando submento meu email &quot;amanda_amy12@hotmail.com&quot;">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Buscar Prato</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200721 13:19:10.770" endtime="20200721 13:19:13.616"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=emailInput</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200721 13:19:13.618" level="INFO">Typing text 'amanda_amy12@hotmail.com' into text field 'accessibility_id=emailInput'</msg>
+<status status="PASS" starttime="20200721 13:19:13.616" endtime="20200721 13:19:13.695"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=plateInput</arg>
+<arg>${prato}</arg>
+</arguments>
+<msg timestamp="20200721 13:19:13.697" level="INFO">Typing text 'Massas' into text field 'accessibility_id=plateInput'</msg>
+<status status="PASS" starttime="20200721 13:19:13.696" endtime="20200721 13:19:14.727"></status>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<doc>Click text identified by ``text``.</doc>
+<arguments>
+<arg>Buscar Prato</arg>
+</arguments>
+<status status="PASS" starttime="20200721 13:19:14.727" endtime="20200721 13:19:15.523"></status>
+</kw>
+<status status="PASS" starttime="20200721 13:19:10.770" endtime="20200721 13:19:15.524"></status>
+</kw>
+<kw name="Então devo ver a lista de pratos por tipo">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Fome de ${prato}</arg>
+</arguments>
+<status status="PASS" starttime="20200721 13:19:15.526" endtime="20200721 13:19:17.904"></status>
+</kw>
+<status status="PASS" starttime="20200721 13:19:15.525" endtime="20200721 13:19:17.904"></status>
+</kw>
+<kw name="Close Session" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200721 13:19:18.597" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200721 13:19:17.906" endtime="20200721 13:19:18.597"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20200721 13:19:18.597" endtime="20200721 13:19:21.037"></status>
+</kw>
+<status status="PASS" starttime="20200721 13:19:17.905" endtime="20200721 13:19:21.037"></status>
+</kw>
+<status status="PASS" starttime="20200721 13:18:45.737" endtime="20200721 13:19:21.037" critical="yes"></status>
+</test>
+<doc>Testes do login no NinjaChef Mobile</doc>
+<status status="PASS" starttime="20200721 13:18:45.477" endtime="20200721 13:19:21.039"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
